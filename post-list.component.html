@@ -1,0 +1,7 @@
+<h1>Latest posts...</h1>
+<app-post *ngFor="let temp of listofPosts; let i=index;"
+ [post]= "temp"
+ [index]= "i"
+ (deleteClicked)="deletePost($event)"
+ ></app-post>
+

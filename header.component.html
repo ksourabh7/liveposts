@@ -1,0 +1,42 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target="#myNavbar"
+        >
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand">Live-posts</a>
+        
+      </div>
+
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class = "nav navbar-nav">
+          <li><a routerLink ="post-list">Posts</a></li>
+          <li>
+            <a routerLink ="post-add" *ngIf = "isAuthenticated">Add Posts</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a routerLink ="auth" *ngIf = "!isAuthenticated">Login</a>
+          </li>
+          <li>
+            <a *ngIf = "isAuthenticated">Logout</a>
+          </li>
+
+          <li>
+            <a (click)="onSave()" *ngIf = "isAuthenticated">Save Data</a>
+          </li>
+          <li>
+            <a (click)="onFetch()">Fetch Data</a>
+          </li>
+        </ul>
+      </div> 
+    </div>
+</nav>
